@@ -32,18 +32,18 @@ public class Node : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
+        if (EventSystem.current.IsPointerOverGameObject())//checking if we clicking on ui element
             return;
-
-        if (!buildManager.CanBuild)
-            return;
-
+        
         if (turret != null)
         {
-            Debug.Log("Can't build there: TODO - display on screen");
+            buildManager.SelectNode(this);
             return;
         }
-
+        
+        if (!buildManager.CanBuild)
+                    return;
+        
         buildManager.BuildTurretOn(this);
     }
 
