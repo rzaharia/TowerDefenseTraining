@@ -5079,6 +5079,7 @@ MonoBehaviour:
     type: 3}
   selectedNode: {fileID: 0}
   nodeUI: {fileID: 962932282}
+  sellEffect: {fileID: 0}
 --- !u!114 &624717201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9188,7 +9189,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &962932281
 Transform:
   m_ObjectHideFlags: 0
@@ -9219,6 +9220,7 @@ MonoBehaviour:
   ui: {fileID: 962932280}
   upgradeCost: {fileID: 224194076}
   upgradeButton: {fileID: 1610747601}
+  sellAmount: {fileID: 1709505709}
 --- !u!1001 &977239632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11924,6 +11926,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1218062574}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1228694478
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1909967890543532652, guid: 0872f4ef9edd78f46b902afb426e8cad,
+        type: 3}
+      propertyPath: m_Name
+      value: SellEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909967890543532641, guid: 0872f4ef9edd78f46b902afb426e8cad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 40.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909967890543532641, guid: 0872f4ef9edd78f46b902afb426e8cad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909967890543532641, guid: 0872f4ef9edd78f46b902afb426e8cad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909967890543532641, guid: 0872f4ef9edd78f46b902afb426e8cad,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909967890543532641, guid: 0872f4ef9edd78f46b902afb426e8cad,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909967890543532641, guid: 0872f4ef9edd78f46b902afb426e8cad,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909967890543532641, guid: 0872f4ef9edd78f46b902afb426e8cad,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909967890543532641, guid: 0872f4ef9edd78f46b902afb426e8cad,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909967890543532641, guid: 0872f4ef9edd78f46b902afb426e8cad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909967890543532641, guid: 0872f4ef9edd78f46b902afb426e8cad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909967890543532641, guid: 0872f4ef9edd78f46b902afb426e8cad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0872f4ef9edd78f46b902afb426e8cad, type: 3}
 --- !u!1001 &1229071075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13183,10 +13254,10 @@ RectTransform:
   m_Father: {fileID: 662765946}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 128.33174, y: -29.652403}
+  m_SizeDelta: {x: 85.5545, y: 59.304806}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1336552520
 MonoBehaviour:
@@ -13230,7 +13301,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1336552521}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 962932282}
+        m_MethodName: Sell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1336552521
@@ -16605,10 +16687,10 @@ RectTransform:
   m_Father: {fileID: 662765946}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 42.77725, y: -29.652403}
+  m_SizeDelta: {x: 85.5545, y: 59.304806}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1610747601
 MonoBehaviour:
@@ -17910,7 +17992,7 @@ GameObject:
   - component: {fileID: 1709505710}
   - component: {fileID: 1709505709}
   m_Layer: 0
-  m_Name: Cost
+  m_Name: SellAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

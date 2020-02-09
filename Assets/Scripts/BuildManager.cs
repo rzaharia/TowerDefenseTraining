@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Object = UnityEngine.Object;
 
 public class BuildManager : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class BuildManager : MonoBehaviour
     public NodeUI nodeUI;
 
     private TurrentBlueprint turrentToBuild;
+    
+    public GameObject sellEffect;
 
     public bool CanBuild => turrentToBuild != null;
     public bool HasMoney => PlayerStats.Money >= turrentToBuild.cost;
