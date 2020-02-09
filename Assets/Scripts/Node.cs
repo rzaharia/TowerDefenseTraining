@@ -65,6 +65,9 @@ public class Node : MonoBehaviour
 
         GameObject effect = (GameObject) Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 5f);
+
+        if (!turretBlueprint.upgradedPrefab)//fix for not having updated tower
+            isUpgraded = true;
     }
 
     public void UpgradeTurret()
