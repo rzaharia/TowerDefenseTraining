@@ -5,6 +5,8 @@ using System.Collections;
 
 public class WaveSpawner : MonoBehaviour
 {
+    public static int EnemiesAlive = 0;
+
     public Transform enemyPrefab;
     public Transform spawnPoint;
 
@@ -17,6 +19,11 @@ public class WaveSpawner : MonoBehaviour
 
     private void Update()
     {
+        if (EnemiesAlive > 0)
+        {
+            return;
+        }
+
         if (countdown <= 0f)
         {
             StartCoroutine(SpawnWave());
@@ -44,5 +51,6 @@ public class WaveSpawner : MonoBehaviour
     private void SpawnEnemy()
     {
         Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        ++EnemiesAlive;
     }
 }
